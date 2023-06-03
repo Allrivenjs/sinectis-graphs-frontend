@@ -1,0 +1,270 @@
+POST http://192.168.1.152:3000/distance-matrix
+Content-Type: application/json
+
+{
+  "graph": {
+    "nodes": [
+      "Nuevo Agrado",
+      "La Doctrina",
+      "Sahagún",
+      "Sampues",
+      "Don Matias",
+      "Montería",
+      "La Ye",
+      "Planeta Rica",
+      "Santa Rosa de Osos",
+      "Don Diego",
+      "Coveñas",
+      "Las Flores",
+      "Chinú",
+      "Caucasia",
+      "San Pelayo",
+      "Rionegro",
+      "Tolu Viejo",
+      "La Apartada",
+      "Llano Grande",
+      "Yarumal",
+      "Medellin",
+      "Moñitos",
+      "Sabaneta",
+      "Momil",
+      "Tuchin",
+      "Buenavista",
+      "Taraza",
+      "La Fe",
+      "Santiago de Tolu",
+      "Pueblo Nuevo",
+      "Bello",
+      "El Viajano",
+      "Guarumo",
+      "Sincelejo",
+      "San Antero",
+      "Lorica",
+      "San Bernardo del Viento",
+      "Cerete",
+      "Cienega de Oro"
+    ],
+    "edges": [
+      {
+        "id": "a1",
+        "node1": "Sincelejo",
+        "node2": "Tolu Viejo"
+      },
+      {
+        "id": "a2",
+        "node1": "Tolu Viejo",
+        "node2": "Santiago de Tolu"
+      },
+      {
+        "id": "a3",
+        "node1": "Santiago de Tolu",
+        "node2": "Coveñas"
+      },
+      {
+        "id": "a4",
+        "node1": "Coveñas",
+        "node2": "San Antero"
+      },
+      {
+        "id": "a5",
+        "node1": "San Antero",
+        "node2": "Nuevo Agrado"
+      },
+      {
+        "id": "a6",
+        "node1": "Nuevo Agrado",
+        "node2": "Lorica"
+      },
+      {
+        "id": "a7",
+        "node1": "Lorica",
+        "node2": "La Doctrina"
+      },
+      {
+        "id": "a8",
+        "node1": "La Doctrina",
+        "node2": "San Bernardo del Viento"
+      },
+      {
+        "id": "a9",
+        "node1": "San Bernardo del Viento",
+        "node2": "Moñitos"
+      },
+      {
+        "id": "a10",
+        "node1": "Moñitos",
+        "node2": "Las Flores"
+      },
+      {
+        "id": "a11",
+        "node1": "Las Flores",
+        "node2": "Montería"
+      },
+      {
+        "id": "a12",
+        "node1": "Montería",
+        "node2": "Cerete"
+      },
+      {
+        "id": "a13",
+        "node1": "Cerete",
+        "node2": "Cienega de Oro"
+      },
+      {
+        "id": "a14",
+        "node1": "Cienega de Oro",
+        "node2": "La Ye"
+      },
+      {
+        "id": "a15",
+        "node1": "La Ye",
+        "node2": "Sahagún"
+      },
+      {
+        "id": "a16",
+        "node1": "Sahagún",
+        "node2": "Chinú"
+      },
+      {
+        "id": "a17",
+        "node1": "Chinú",
+        "node2": "Sampues"
+      },
+      {
+        "id": "a18",
+        "node1": "Sampues",
+        "node2": "Sincelejo"
+      },
+      {
+        "id": "a19",
+        "node1": "Coveñas",
+        "node2": "Sabaneta"
+      },
+      {
+        "id": "a20",
+        "node1": "Sabaneta",
+        "node2": "Momil"
+      },
+      {
+        "id": "a21",
+        "node1": "Momil",
+        "node2": "Tuchin"
+      },
+      {
+        "id": "a22",
+        "node1": "Tuchin",
+        "node2": "Chinú"
+      },
+      {
+        "id": "a23",
+        "node1": "Momil",
+        "node2": "Lorica"
+      },
+      {
+        "id": "a24",
+        "node1": "Lorica",
+        "node2": "San Pelayo"
+      },
+      {
+        "id": "a25",
+        "node1": "San Pelayo",
+        "node2": "Cerete"
+      },
+      {
+        "id": "a26",
+        "node1": "La Ye",
+        "node2": "El Viajano"
+      },
+      {
+        "id": "a27",
+        "node1": "El Viajano",
+        "node2": "Pueblo Nuevo"
+      },
+      {
+        "id": "a28",
+        "node1": "Pueblo Nuevo",
+        "node2": "Planeta Rica"
+      },
+      {
+        "id": "a29",
+        "node1": "Montería",
+        "node2": "Planeta Rica"
+      },
+      {
+        "id": "a30",
+        "node1": "Planeta Rica",
+        "node2": "Buenavista"
+      },
+      {
+        "id": "a31",
+        "node1": "Buenavista",
+        "node2": "La Apartada"
+      },
+      {
+        "id": "a32",
+        "node1": "La Apartada",
+        "node2": "Caucasia"
+      },
+      {
+        "id": "a33",
+        "node1": "Caucasia",
+        "node2": "Guarumo"
+      },
+      {
+        "id": "a34",
+        "node1": "Guarumo",
+        "node2": "Taraza"
+      },
+      {
+        "id": "a35",
+        "node1": "Taraza",
+        "node2": "Yarumal"
+      },
+      {
+        "id": "a36",
+        "node1": "Yarumal",
+        "node2": "Santa Rosa de Osos"
+      },
+      {
+        "id": "a37",
+        "node1": "Santa Rosa de Osos",
+        "node2": "Don Matias"
+      },
+      {
+        "id": "a38",
+        "node1": "Don Matias",
+        "node2": "Bello"
+      },
+      {
+        "id": "a39",
+        "node1": "Bello",
+        "node2": "Medellin"
+      },
+      {
+        "id": "a40",
+        "node1": "Medellin",
+        "node2": "La Fe"
+      },
+      {
+        "id": "a41",
+        "node1": "La Fe",
+        "node2": "Don Diego"
+      },
+      {
+        "id": "a42",
+        "node1": "Don Diego",
+        "node2": "Llano Grande"
+      },
+      {
+        "id": "a43",
+        "node1": "Llano Grande",
+        "node2": "Rionegro"
+      },
+      {
+        "id": "a44",
+        "node1": "Bello",
+        "node2": "Rionegro"
+      }
+    ]
+  }
+} 
