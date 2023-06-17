@@ -10,7 +10,6 @@ export interface IGraph {
 export interface Node {
   id: string;
   label: string;
-  title: string;
   position: Vector3Fiber | [number, number];
 }
 

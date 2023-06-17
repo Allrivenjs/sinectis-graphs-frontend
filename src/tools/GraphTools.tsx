@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, Ref, RefObject, useState } from 'react';
+import React, { FC, MouseEvent, RefObject, useState } from 'react';
 
 import { createPortal } from 'react-dom';
 
@@ -19,11 +19,12 @@ export const GraphTools: FC<GraphTools> = ({ containerRef }) => {
 
   const selectedNode = useGraphTools();
 
-  const onClickAddNode = () => {
+  const onClickAddNode = (e: MouseEvent<HTMLElement>) => {
     setShowNewNodeModal(true);
   };
 
-  const onCloseAddNode = () => {
+  const onCloseAddNode = (e: MouseEvent<HTMLElement>) => {
+    if (e.target !== e.currentTarget) return;
     setShowNewNodeModal(false);
   };
 

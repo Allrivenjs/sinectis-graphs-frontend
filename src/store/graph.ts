@@ -25,7 +25,6 @@ const useGraphStore = create<GraphState>()(
           {
             id: '1',
             label: 'Node 1',
-            title: 'node 1 tootip text',
             position: [10, 0],
           },
           {
