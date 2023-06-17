@@ -1,57 +1,100 @@
 import { create } from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
+import { devtools } from 'zustand/middleware';
 
-import { IGraph } from '@/types';
+import { Edge, IGraph, Node } from '@/types';
+
+import { v4 as uuidv4 } from 'uuid';
 
 interface GraphState {
   graph: IGraph;
   actions: {
-    addNode: () => void;
-    removeNode: (id: number) => void;
+    addNode: (node: Node) => void;
+    addEdge: (edge: Edge) => void;
+    removeNode: (id: string) => void;
+    changeNodePosition: (id: string, newPosition: [number, number]) => void;
+    getNodeById: (id: string) => Node | undefined;
   };
 }
 
 const useGraphStore = create<GraphState>()(
   devtools(
     // persist(
-    (set) => ({
+    (set, get) => ({
       graph: {
         nodes: [
           {
-            id: 1,
+            id: '1',
             label: 'Node 1',
             title: 'node 1 tootip text',
-            position: [10, 0, 0],
+            position: [10, 0],
           },
           {
-            id: 2,
+            id: '2',
             label: 'Node 2',
             title: 'node 2 tootip text',
-            position: [-10, 0, 0],
+            position: [-10, 0],
           },
         ],
         edges: [
           {
-            from: 1,
-            to: 2,
-            fromPosition: [10, 0, 0],
-            toPosition: [-10, 0, 0],
+            from: '1',
+            to: '2',
+            label: 'lol',
           },
         ],
       },
       actions: {
-        addNode: () =>
+        addEdge: (edge: Edge) =>
           set((state) => ({
             ...state,
             graph: {
               ...state.graph,
-              nodes: [
-                ...state.graph.nodes,
-                { id: 6, label: 'asdf', title: 'node', position: [0, 0, 0] },
-              ],
+              edges: [...state.graph.edges, edge],
             },
           })),
-        removeNode: () => {},
+        addNode: (node: Node) =>
+          set((state) => ({
+            ...state,
+            graph: {
+              ...state.graph,
+              nodes: [...state.graph.nodes, node],
+            },
+          })),
+        removeNode: (id: string) =>
+          set((state) => {
+            return {
+              ...state,
+              graph: {
+                ...state.graph,
+                nodes: state.graph.nodes.filter((node) => node.id !== id),
+                edges: state.graph.edges.filter(
+                  (edge) => edge.to !== id && edge.from !== id
+                ),
+              },
+            };
+          }),
+        changeNodePosition: (id: string, newPosition: [number, number]) =>
+          set((state) => {
+            return {
+              ...state,
+              graph: {
+                ...state.graph,
+                nodes: state.graph.nodes.map((node) => {
+                  if (node.id === id) {
+                    node.position = newPosition;
+                  }
+                  return node;
+                }),
+              },
+            };
+          }),
+
+        getNodeById: (id?: string) => {
+          const { graph } = get();
+          const { nodes } = graph;
+
+          return nodes.find((node) => node.id === id);
+        },
       },
       // increase: (by) => set((state) => ({ bears: state.bears + by })),
     }),

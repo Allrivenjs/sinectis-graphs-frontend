@@ -1,4 +1,6 @@
-import { Vector3 } from '@react-three/fiber';
+import { Vector3 as Vector3Fiber } from '@react-three/fiber';
+
+import { v4 as uuidv4 } from 'uuid';
 
 export interface IGraph {
   nodes: Array<Node>;
@@ -6,15 +8,14 @@ export interface IGraph {
 }
 
 export interface Node {
-  id: number;
+  id: string;
   label: string;
   title: string;
-  position: Vector3;
+  position: Vector3Fiber | [number, number];
 }
 
 export interface Edge {
-  from: number;
-  to: number;
-  toPosition: Vector3;
-  fromPosition: Vector3;
+  from: string;
+  to: string;
+  label: string | null;
 }

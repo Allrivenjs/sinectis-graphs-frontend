@@ -1,15 +1,17 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode } from 'react';
 
 type Button = {
   children: ReactNode;
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
-export const Button: FC<Button> = ({children, onClick}) => {
+export const Button: FC<Button> = ({ children, onClick }) => {
   return (
-    <button 
-      className='bg-white px-3 py-2 text-black rounded-md hover:bg-slate-200 active:translate-y-1 transition-all'
+    <button
+      className='px-3 py-2 text-sm text-zinc-200 rounded-md hover:bg-zinc-700 active:translate-y-1 transition-all'
       onClick={onClick}
-    >{children}</button>
+    >
+      {children}
+    </button>
   );
 };

@@ -1,3 +1,4 @@
+import { Modal } from '@/components';
 import './globals.css';
 import { Inter } from 'next/font/google';
 
@@ -16,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className} suppressHydrationWarning={true}>
-        <div className='h-screen w-full'>{children}</div>
+        <div className='h-screen w-full relative'>{children}</div>
       </body>
     </html>
   );

@@ -2,10 +2,10 @@
 import { Button } from '@/components/Button';
 import { Graph } from '@/graph_2';
 import { useGraph, useGraphActions } from '@/store/graph';
+import { GraphTools } from '@/tools';
 
 export default function Home() {
   const { nodes, edges } = useGraph();
-  const { addNode, removeNode } = useGraphActions();
 
   const events = {
     select: function (event) {
@@ -14,10 +14,8 @@ export default function Home() {
   };
 
   return (
-    <main className='flex flex-col items-center justify-between h-full'>
-      <div className='w-full p-4'>
-        <Button onClick={() => addNode()}>Create a node</Button>
-      </div>
+    <main className='flex flex-col items-center justify-between h-full relative'>
+      <GraphTools />
       <Graph graph={{ nodes, edges }} />
     </main>
   );
