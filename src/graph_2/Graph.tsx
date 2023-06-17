@@ -4,7 +4,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 
 import { Circle, OrbitControls, OrthographicCamera } from '@react-three/drei';
 
-import { IGraph } from '../types';
+import { IGraph } from '@/types';
 import { Node, Edge } from './';
 import { useDrag } from '@use-gesture/react';
 
